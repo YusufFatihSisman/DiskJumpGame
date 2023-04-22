@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace51288c0230a64ca6731741b22b488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diskPrefab: {fileID: 4033826550215738840, guid: e8c49025d5c0cb648b0afcd0b7129bd0, type: 3}
+  diskPrefab: {fileID: 4857206507180501194, guid: f237df2f77e8bda43989471f0fe0e654, type: 3}
   TopLimit: {fileID: 260093196}
   BottomLimit: {fileID: 322592853}
 --- !u!4 &260093196
