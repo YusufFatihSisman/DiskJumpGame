@@ -20,7 +20,7 @@ public class DiskMovement : MonoBehaviour
     void Update()
     {
         if(isOutScene())
-            Destroy(gameObject);
+            gameObject.SetActive(false);
     }
 
     void FixedUpdate()
