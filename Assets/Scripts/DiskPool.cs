@@ -31,13 +31,13 @@ public class DiskPool : MonoBehaviour
     public GameObject GetPooledObject()
     {
         for(int i = 0; i < amountToPool; i++){
-            Debug.Log(i);
             if(!pooledObjects[i].activeInHierarchy)
                 return pooledObjects[i];
         }
         GameObject tmp = Instantiate(objectToPool);
         tmp.SetActive(false);
         pooledObjects.Add(tmp);
+        amountToPool++;
         return tmp;
     }
 

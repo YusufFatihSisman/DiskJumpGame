@@ -100,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivot: {fileID: 0}
-  startSpeed: 30
+  topLimit: {fileID: 0}
+  botLimit: {fileID: 0}
+  startSpeed: 50
   jumpSpeed: 4
 --- !u!70 &160193437343067834
 CapsuleCollider2D:

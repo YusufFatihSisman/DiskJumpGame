@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     public Transform pivot;
+    public Transform topLimit;
+    public Transform botLimit;
     public float startSpeed = 30f;
     public float jumpSpeed = 2f;
     private bool start = true;
@@ -17,12 +20,14 @@ public class PlayerController : MonoBehaviour
     private float rotateSpeed = 0f;
     private float scrollSpeed = 0f;
     private Vector3 diskPosition;
-
+    private float xSize;
+    private float ySize;
 
     // Start is called before the first frame update
     void Start()
     {
-   
+        xSize = GetComponent<Collider2D>().bounds.size.x;
+        ySize = GetComponent<Collider2D>().bounds.size.y;
     }
 
     // Update is called once per frame
@@ -36,7 +41,11 @@ public class PlayerController : MonoBehaviour
             
         if(!isJump)
             diskPosition = new Vector2(diskPosition.x - (Time.deltaTime * scrollSpeed), diskPosition.y);
-             
+
+        if(isOut())
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+
     }
 
     void FixedUpdate()
@@ -77,6 +86,25 @@ public class PlayerController : MonoBehaviour
         transform.position += transform.right * Time.deltaTime * jumpSpeed;
     }
 
+    bool isOut(){
+        if(transform.position.x + xSize < pivot.position.x)
+            return true;
+        if(transform.position.x + ySize < pivot.position.x)
+            return true;
+
+        if(transform.position.y - ySize > topLimit.position.y)
+            return true;
+
+        if(transform.position.y + ySize < botLimit.position.y)
+            return true;
+
+        if(transform.position.x - ySize > topLimit.position.x)
+            return true;
+
+        
+        return false;
+    }
+
     void OnCollisionEnter2D(Collision2D collision){
         isJump = false;
         GameObject other = collision.gameObject;
@@ -90,5 +118,8 @@ public class PlayerController : MonoBehaviour
         Vector2 hitNormal = (transform.position - diskPosition).normalized;
         transform.rotation = Quaternion.FromToRotation(transform.right, hitNormal) * transform.rotation;
     }
-    
+
+    public float GetXSize(){
+        return xSize;
+    }
 }

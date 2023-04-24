@@ -101,9 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 1
-  rotationSpeed: 20
+  rotationSpeed: 40
   direction: 0
-  endpoint: {fileID: 0}
 --- !u!58 &3007115687201305209
 CircleCollider2D:
   m_ObjectHideFlags: 0

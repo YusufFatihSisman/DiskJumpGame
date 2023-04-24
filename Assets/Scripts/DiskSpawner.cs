@@ -5,6 +5,7 @@ using UnityEngine;
 public class DiskSpawner : MonoBehaviour
 {
 
+    public GameObject player;
     public Transform endPoint;
     public GameObject diskPrefab;
     public Transform TopLimit;
@@ -12,9 +13,13 @@ public class DiskSpawner : MonoBehaviour
     private float bottomSize = 1f;
     private float topSize = 4f;
 
+    private float playerXSize;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        playerXSize = player.GetComponent<PlayerController>().GetXSize();
         StartCoroutine(CreateDisk(5f));
     }
 
@@ -34,9 +39,9 @@ public class DiskSpawner : MonoBehaviour
                 float size = Random.Range(bottomSize, topSize);
                 float pos = Random.Range(BottomLimit.position.y, TopLimit.position.y);
                 if(pos + size/2 > TopLimit.position.y)
-                    pos = TopLimit.position.y - size/2;
+                    pos = TopLimit.position.y - size/2 - playerXSize;     
                 if(pos - size/2 < BottomLimit.position.y)
-                    pos = BottomLimit.position.y + size/2;
+                    pos = BottomLimit.position.y + size/2 + playerXSize;
 
                 newDisk.transform.position = new Vector3(TopLimit.position.x+(size/2), pos, 0);
                 //GameObject newObject = Instantiate(diskPrefab, new Vector2(TopLimit.position.x+(size/2), pos), Quaternion.identity);

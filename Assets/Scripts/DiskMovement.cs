@@ -33,7 +33,6 @@ public class DiskMovement : MonoBehaviour
     }
 
     private bool isOutScene(){
-        //Debug.Log(endpoint);
         if(transform.position.x + transform.localScale.x/2 < endpoint.x)
             return true;
         else

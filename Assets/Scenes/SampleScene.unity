@@ -220,6 +220,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: -180, z: 0}
+--- !u!1 &210008253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046109088886271912, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+  m_PrefabInstance: {fileID: 2520561228007535221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260093194
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace51288c0230a64ca6731741b22b488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 210008253}
   endPoint: {fileID: 1894761548}
   diskPrefab: {fileID: 4857206507180501194, guid: f237df2f77e8bda43989471f0fe0e654, type: 3}
   TopLimit: {fileID: 260093196}
@@ -520,5 +526,13 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 1894761548}
+    - target: {fileID: 1046109088886271919, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: botLimit
+      value: 
+      objectReference: {fileID: 322592853}
+    - target: {fileID: 1046109088886271919, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: topLimit
+      value: 
+      objectReference: {fileID: 260093196}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
