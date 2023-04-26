@@ -107,16 +107,16 @@ public class PlayerController : MonoBehaviour
     }
 
     public void AfterCollisionAnimation(){
-        animator.SetBool("DrugCollision", false);
         Vector2 currentDirection = transform.right;
         Vector2 hitNormal = (transform.position - diskPosition).normalized;
         transform.rotation = Quaternion.FromToRotation(transform.right, hitNormal) * transform.rotation;
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        animator.SetBool("DrugCollision", true);
-
+        animator.SetTrigger("DrugCollision");
         isJump = false;
+        
         GameObject other = collision.gameObject;
         DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
         rotateSpeed = dM.getRotationSpeed();
