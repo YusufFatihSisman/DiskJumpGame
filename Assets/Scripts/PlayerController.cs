@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Transform pivot;
     public Transform topLimit;
     public Transform botLimit;
+    public Animator animator;
     public float startSpeed = 30f;
     public float jumpSpeed = 2f;
     private bool start = true;
@@ -105,18 +106,23 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    public void AfterCollisionAnimation(){
+        animator.SetBool("DrugCollision", false);
+        Vector2 currentDirection = transform.right;
+        Vector2 hitNormal = (transform.position - diskPosition).normalized;
+        transform.rotation = Quaternion.FromToRotation(transform.right, hitNormal) * transform.rotation;
+    }
+
     void OnCollisionEnter2D(Collision2D collision){
+        animator.SetBool("DrugCollision", true);
+
         isJump = false;
         GameObject other = collision.gameObject;
         DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
         rotateSpeed = dM.getRotationSpeed();
         direction = dM.getDirection();
         diskPosition = dM.getPosition();
-        scrollSpeed = dM.getScrollSpeed();
-
-        Vector2 currentDirection = transform.right;
-        Vector2 hitNormal = (transform.position - diskPosition).normalized;
-        transform.rotation = Quaternion.FromToRotation(transform.right, hitNormal) * transform.rotation;
+        scrollSpeed = dM.getScrollSpeed();    
     }
 
     public float GetXSize(){

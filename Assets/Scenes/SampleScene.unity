@@ -225,6 +225,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1046109088886271912, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
   m_PrefabInstance: {fileID: 2520561228007535221}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &210008259
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210008253}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad32dd0c9d32d444fa0570bac14332ee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &260093194
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 210008253}
   endPoint: {fileID: 1894761548}
-  diskPrefab: {fileID: 4857206507180501194, guid: f237df2f77e8bda43989471f0fe0e654, type: 3}
+  diskPrefab: {fileID: 718258903176012564, guid: 9204abf3078e0364fb82dd84de726e3c, type: 3}
   TopLimit: {fileID: 260093196}
   BottomLimit: {fileID: 322592853}
 --- !u!114 &1408755430
@@ -419,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObjects: []
-  objectToPool: {fileID: 4857206507180501194, guid: f237df2f77e8bda43989471f0fe0e654, type: 3}
+  objectToPool: {fileID: 718258903176012564, guid: 9204abf3078e0364fb82dd84de726e3c, type: 3}
   amountToPool: 2
 --- !u!4 &1408755431
 Transform:
@@ -474,9 +494,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160193437343067834, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 160193437343067834, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1046109088886271912, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046109088886271913, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Size.x
+      value: 1.2307693
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046109088886271913, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2307693
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046109088886271913, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -435592492, guid: e0b2e52b585df164fa2370a2aad438b5, type: 3}
+    - target: {fileID: 1046109088886271913, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046109088886271913, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1046109088886271913, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1046109088886271918, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
       propertyPath: m_RootOrder
@@ -526,6 +578,10 @@ PrefabInstance:
       propertyPath: pivot
       value: 
       objectReference: {fileID: 1894761548}
+    - target: {fileID: 1046109088886271919, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 210008259}
     - target: {fileID: 1046109088886271919, guid: 0cffbc1555f19c749952a561ef5f7dc0, type: 3}
       propertyPath: botLimit
       value: 
