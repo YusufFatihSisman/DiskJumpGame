@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e0b2e52b585df164fa2370a2aad438b5
+guid: e47bea7c46fbcaf48acf3e93749b312e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 22
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e818bdaa3a9e2b44a6a08e52c5123b2
-      internalID: -435592492
+      spriteID: 89b36ffb0266677458ee8f7ad8dcf9ea
+      internalID: -244187628
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9b081249f3ad3246aab2bf190e043f3
-      internalID: 1782968097
+      spriteID: c5831f40fa7952641a875ffc1eeda882
+      internalID: -1997328209
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83f79ca62b6ef5c45b5eaf7b63287de5
-      internalID: 1698252125
+      spriteID: 58a132751e52bc844a4f33ab1bb8eefc
+      internalID: 1978842629
       vertices: []
       indices: 
       edges: []
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92c8e19355446c949979e929c79c3e1d
-      internalID: -583896967
+      spriteID: 46ed6935bf6fbfe4193f33eeb1d9c89a
+      internalID: 516357777
       vertices: []
       indices: 
       edges: []
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7859ff7d3d5d8744ad5ac5cc21f37c4
-      internalID: 1142482793
+      spriteID: f3ca1247a2db759438ec03d41d0e9839
+      internalID: -1277003041
       vertices: []
       indices: 
       edges: []
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60f0f4aa1b8aa7c48b8490efbabe205f
-      internalID: 1456000612
+      spriteID: 8a804cc4e684cf748b0f573601498fb5
+      internalID: -796271090
       vertices: []
       indices: 
       edges: []
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b71d2a62570bf0478927af5c4b1b91b
-      internalID: -1113498903
+      spriteID: e6aa0b8295c12084ca9d6aada2777c3f
+      internalID: -410025911
       vertices: []
       indices: 
       edges: []
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f997bce06d7f8a408ebc6983109dc17
-      internalID: 1812185136
+      spriteID: 2eccc9a2f0fa5d34ca5ee1b5fd370c99
+      internalID: 890596966
       vertices: []
       indices: 
       edges: []
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4ad8b3677efa8243a53b5f21cf08800
-      internalID: 1924750615
+      spriteID: 47dc3f911aa06e349aa299faa324bcd5
+      internalID: -1309210190
       vertices: []
       indices: 
       edges: []
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a779879719d87e4fbfebe99c340a85e
-      internalID: 1355970525
+      spriteID: f71f1fd4dfa87ea4495c976d3b1d755e
+      internalID: -45158391
       vertices: []
       indices: 
       edges: []
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83d83fbd30f1a2d49b6f6aa8d4a533e7
-      internalID: -1420336733
+      spriteID: 34097139c4ff47148b7f2fbcccfe1f3e
+      internalID: -1976526873
       vertices: []
       indices: 
       edges: []
@@ -358,17 +358,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Drug_8: 1924750615
-      Drug_1: 1782968097
-      Drug_2: 1698252125
-      Drug_9: 1355970525
-      Drug_0: -435592492
-      Drug_10: -1420336733
-      Drug_7: 1812185136
-      Drug_4: 1142482793
-      Drug_5: 1456000612
-      Drug_6: -1113498903
-      Drug_3: -583896967
+      Drug_8: -1309210190
+      Drug_1: -1997328209
+      Drug_2: 1978842629
+      Drug_9: -45158391
+      Drug_0: -244187628
+      Drug_10: -1976526873
+      Drug_7: 890596966
+      Drug_4: -1277003041
+      Drug_5: -796271090
+      Drug_6: -410025911
+      Drug_3: 516357777
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
