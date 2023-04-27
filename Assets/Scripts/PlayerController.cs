@@ -119,10 +119,11 @@ public class PlayerController : MonoBehaviour
         
         GameObject other = collision.gameObject;
         DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
-        rotateSpeed = dM.getRotationSpeed();
-        direction = dM.getDirection();
-        diskPosition = dM.getPosition();
-        scrollSpeed = dM.getScrollSpeed();    
+        dM.Cure();
+        rotateSpeed = dM.GetRotationSpeed();
+        direction = dM.GetDirection();
+        diskPosition = dM.GetPosition();
+        scrollSpeed = dM.GetScrollSpeed();    
     }
 
     public float GetXSize(){

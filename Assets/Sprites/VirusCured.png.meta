@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 56396aa8041a59c4ca1197378af297a5
+guid: d4e333bffc1c6b24495fb4c868e897f8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Virus_0
+      name: VirusCured_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51e689d9f98a23a47880e170ec11e944
-      internalID: -300264653
+      spriteID: 3595c345acac94047aefa15321b08152
+      internalID: 1753038452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_1
+      name: VirusCured_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bdc638d0ac1570438748ae1eb226948
-      internalID: 1708255379
+      spriteID: bfb01a533464ee54290bb0bc702e9d16
+      internalID: -1430091711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_2
+      name: VirusCured_2
       rect:
         serializedVersion: 2
         x: 64
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7099ca808de97e46be1a9cfe10f0133
-      internalID: -1512704545
+      spriteID: a288262a5a3ad6740be32805c100125b
+      internalID: 259388787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_3
+      name: VirusCured_3
       rect:
         serializedVersion: 2
         x: 96
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9838283cb7208924eb69bed98651e041
-      internalID: 812965120
+      spriteID: 1e97e7e29be098e4680b1280491428bb
+      internalID: 1760353358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_4
+      name: VirusCured_4
       rect:
         serializedVersion: 2
         x: 128
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4eb9e51ab3c6445a9b4ac4ee296ea0
-      internalID: -145968935
+      spriteID: 3991b86076ec8e244a6ccb125c2af64f
+      internalID: 967764897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_5
+      name: VirusCured_5
       rect:
         serializedVersion: 2
         x: 160
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b73aabcfaf4b7b45bc5bdf44c2901fa
-      internalID: -1890279469
+      spriteID: f137feccfae716342b69562676af3268
+      internalID: -2054071231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_6
+      name: VirusCured_6
       rect:
         serializedVersion: 2
         x: 192
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9fcbaa775a200af49ab5969ba2b97cec
-      internalID: 60047295
+      spriteID: 5590040c8587f11478c468e68c1fd66d
+      internalID: 966909570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Virus_7
+      name: VirusCured_7
       rect:
         serializedVersion: 2
         x: 224
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31eb62a6d004bbe4e8110b956b60f940
-      internalID: 521933370
+      spriteID: b1af6ffd2886c8c4ebf7bb9569087bff
+      internalID: 554355149
       vertices: []
       indices: 
       edges: []
@@ -295,14 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Virus_5: -1890279469
-      Virus_2: -1512704545
-      Virus_4: -145968935
-      Virus_3: 812965120
-      Virus_0: -300264653
-      Virus_1: 1708255379
-      Virus_6: 60047295
-      Virus_7: 521933370
+      VirusCured_4: 967764897
+      VirusCured_3: 1760353358
+      VirusCured_7: 554355149
+      VirusCured_5: -2054071231
+      VirusCured_6: 966909570
+      VirusCured_1: -1430091711
+      VirusCured_2: 259388787
+      VirusCured_0: 1753038452
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

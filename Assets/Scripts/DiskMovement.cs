@@ -5,6 +5,7 @@ using UnityEngine;
 public class DiskMovement : MonoBehaviour
 {
 
+    public Animator animator;
     public float scrollSpeed = 1f;
     public float rotationSpeed = 50f;
     public bool direction = false;
@@ -19,8 +20,10 @@ public class DiskMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isOutScene())
+        if(IsOutScene())
             gameObject.SetActive(false);
+
+            
     }
 
     void FixedUpdate()
@@ -32,31 +35,36 @@ public class DiskMovement : MonoBehaviour
             transform.RotateAround(transform.position, Vector3.back, rotationSpeed * Time.deltaTime);
     }
 
-    private bool isOutScene(){
+    private bool IsOutScene(){
         if(transform.position.x + transform.localScale.x/2 < endpoint.x)
             return true;
         else
             return false;
     }
 
-    public float getRotationSpeed(){
+    public float GetRotationSpeed(){
         return rotationSpeed;
     }
 
-    public bool getDirection(){
+    public bool GetDirection(){
         return direction;
     }
 
-    public float getScrollSpeed(){
+    public float GetScrollSpeed(){
         return scrollSpeed;
     }
 
-    public Vector3 getPosition(){
+    public Vector3 GetPosition(){
         return transform.position;
     }
 
-    public void setEndPoint(Vector3 pos)
+    public void SetEndPoint(Vector3 pos)
     {
         endpoint = pos;
     }
+
+    public void Cure(){
+        animator.SetTrigger("Cure");
+    }
+
 }

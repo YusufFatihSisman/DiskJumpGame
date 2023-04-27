@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 267921515, guid: 56396aa8041a59c4ca1197378af297a5, type: 3}
+  m_Sprite: {fileID: 554355149, guid: d4e333bffc1c6b24495fb4c868e897f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2307693, y: 1.2307693}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,6 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe4ee77024ad9c46b3dce27cbcd9cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 3215089432514979275}
+  curedSprite: {fileID: 554355149, guid: d4e333bffc1c6b24495fb4c868e897f8, type: 3}
+  virusSprite: {fileID: -300264653, guid: 56396aa8041a59c4ca1197378af297a5, type: 3}
+  animator: {fileID: 2767846868486927387}
   scrollSpeed: 1
   rotationSpeed: 40
   direction: 0
@@ -116,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.015, y: 0.02}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.37
 --- !u!50 &6320654430738485967
 Rigidbody2D:
   serializedVersion: 4
