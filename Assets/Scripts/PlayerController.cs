@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     private float xSize;
     private float ySize;
 
+    private bool turnClock = false;
+    private bool turnCounterClock = false;
+    private float  rotatePower = 60f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +42,24 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown("space")){
             isJump = true;
             start = false;
+            turnClock = false;
+            turnCounterClock = false;
         }
             
-        if(!isJump)
+        if(!isJump && !start){
+            if(Input.GetKeyDown(KeyCode.D))
+                turnClock = true;
+            if(Input.GetKeyUp(KeyCode.D))
+                turnClock = false;
+            
+            if(Input.GetKeyDown(KeyCode.A))
+                turnCounterClock = true;
+            if(Input.GetKeyUp(KeyCode.A))
+                turnCounterClock = false;
+
             diskPosition = new Vector2(diskPosition.x - (Time.deltaTime * scrollSpeed), diskPosition.y);
+
+        }
 
         if(isOut())
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -53,8 +71,15 @@ public class PlayerController : MonoBehaviour
     {
         if(isJump)
             Jump();
-        else
+        else{
             RotateAroundDisk();
+            if(turnClock)
+                transform.RotateAround(diskPosition, Vector3.back, rotatePower * Time.deltaTime);
+            else if(turnCounterClock)
+                transform.RotateAround(diskPosition, Vector3.forward, rotatePower * Time.deltaTime); 
+                
+        }
+            
 
         if(start)
             StartFunction();
@@ -65,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = new Vector2(transform.position.x - (Time.deltaTime * scrollSpeed), transform.position.y);
         if(direction)
-            transform.RotateAround(diskPosition, Vector3.forward, rotateSpeed * Time.deltaTime);  
+            transform.RotateAround(diskPosition, Vector3.forward, rotateSpeed  * Time.deltaTime);
         else
             transform.RotateAround(diskPosition, Vector3.back, rotateSpeed * Time.deltaTime);
     }
@@ -114,16 +139,20 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision){
-        animator.SetTrigger("DrugCollision");
-        isJump = false;
+        if(collision.gameObject.tag == "Infected"){
+            collision.gameObject.tag = "Cured";
+            animator.SetTrigger("DrugCollision");
+            isJump = false;
+            
+            GameObject other = collision.gameObject;
+            DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
+            dM.Cure();
+            rotateSpeed = dM.GetRotationSpeed();
+            direction = dM.GetDirection();
+            diskPosition = dM.GetPosition();
+            scrollSpeed = dM.GetScrollSpeed();    
+        }
         
-        GameObject other = collision.gameObject;
-        DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
-        dM.Cure();
-        rotateSpeed = dM.GetRotationSpeed();
-        direction = dM.GetDirection();
-        diskPosition = dM.GetPosition();
-        scrollSpeed = dM.GetScrollSpeed();    
     }
 
     public float GetXSize(){

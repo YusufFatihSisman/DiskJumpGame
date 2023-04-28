@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2767846868486927387}
   m_Layer: 0
   m_Name: Disk
-  m_TagString: Untagged
+  m_TagString: Infected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,9 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbe4ee77024ad9c46b3dce27cbcd9cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 3215089432514979275}
-  curedSprite: {fileID: 554355149, guid: d4e333bffc1c6b24495fb4c868e897f8, type: 3}
-  virusSprite: {fileID: -300264653, guid: 56396aa8041a59c4ca1197378af297a5, type: 3}
   animator: {fileID: 2767846868486927387}
   scrollSpeed: 1
   rotationSpeed: 40
