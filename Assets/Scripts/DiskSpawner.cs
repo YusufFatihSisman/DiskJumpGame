@@ -14,6 +14,7 @@ public class DiskSpawner : MonoBehaviour
     private float topSize = 4f;
 
     private float playerXSize;
+    private float scrollSpeed = 1f;
 
 
     // Start is called before the first frame update
@@ -36,16 +37,22 @@ public class DiskSpawner : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             GameObject newDisk = DiskPool.SharedInstance.GetPooledObject();
             if(newDisk != null){
+                DiskMovement dM = newDisk.GetComponent<DiskMovement>();
                 float size = Random.Range(bottomSize, topSize);
                 float pos = Random.Range(BottomLimit.position.y, TopLimit.position.y);
                 if(pos + size/2 > TopLimit.position.y)
                     pos = TopLimit.position.y - size/2 - playerXSize;     
                 if(pos - size/2 < BottomLimit.position.y)
                     pos = BottomLimit.position.y + size/2 + playerXSize;
-
+                int direction = Random.Range(0, 2);
+                if(direction == 0)
+                    dM.SetRotation(false);
+                else
+                    dM.SetRotation(true);
                 newDisk.transform.position = new Vector3(TopLimit.position.x+(size/2), pos, 0);
                 newDisk.tag = "Infected";
-                newDisk.GetComponent<DiskMovement>().SetEndPoint(endPoint.position);
+                dM.SetEndPoint(endPoint.position);
+                dM.SetScrollSpeed(scrollSpeed);
                 newDisk.transform.localScale = new Vector2(size, size); // change its local scale in x y z format
                 newDisk.SetActive(true);
                 newDisk.GetComponent<Animator>().SetTrigger("Spawn");
@@ -57,4 +64,8 @@ public class DiskSpawner : MonoBehaviour
         }
     }
 
+
+    public void SpeedUp(){
+        scrollSpeed *= 2;
+    }
 }

@@ -22,4 +22,9 @@ public class BackgroundScroller : MonoBehaviour
         mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
         
     }
+
+    public void SpeedUp(){
+        Debug.Log("Background SpeedUP");
+        scrollSpeed *= 2;
+    }
 }

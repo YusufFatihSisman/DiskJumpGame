@@ -26,13 +26,17 @@ public class PlayerController : MonoBehaviour
 
     private bool turnClock = false;
     private bool turnCounterClock = false;
-    private float  rotatePower = 60f;
+    private float  rotatePower = 100f;
+
+    public GameObject scoreText;
+    private Score scoreScript;
 
     // Start is called before the first frame update
     void Start()
     {
         xSize = GetComponent<Collider2D>().bounds.size.x;
         ySize = GetComponent<Collider2D>().bounds.size.y;
+        scoreScript = scoreText.GetComponent<Score>();
     }
 
     // Update is called once per frame
@@ -146,6 +150,7 @@ public class PlayerController : MonoBehaviour
             
             GameObject other = collision.gameObject;
             DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
+            scoreScript.UpdateScore(5 - (int)collision.gameObject.transform.localScale.x);
             dM.Cure();
             rotateSpeed = dM.GetRotationSpeed();
             direction = dM.GetDirection();
@@ -153,6 +158,10 @@ public class PlayerController : MonoBehaviour
             scrollSpeed = dM.GetScrollSpeed();    
         }
         
+    }
+
+    public void SpeedUp(){
+        scrollSpeed *= 2;
     }
 
     public float GetXSize(){

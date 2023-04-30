@@ -6,9 +6,9 @@ public class DiskMovement : MonoBehaviour
 {
 
     public Animator animator;
-    public float scrollSpeed = 1f;
-    public float rotationSpeed = 50f;
-    public bool direction = false;
+    private float scrollSpeed = 1f;
+    private float rotationSpeed = 50f;
+    private bool direction = false;
     private Vector3 endpoint;
 
     // Start is called before the first frame update
@@ -61,6 +61,18 @@ public class DiskMovement : MonoBehaviour
     public void SetEndPoint(Vector3 pos)
     {
         endpoint = pos;
+    }
+
+    public void SetRotation(bool newDir){
+        direction = newDir;
+    }
+
+    public void SetScrollSpeed(float speed){
+        scrollSpeed = speed;
+    }
+
+    public void SpeedUp(){
+        scrollSpeed *= 2;
     }
 
     public void Cure(){

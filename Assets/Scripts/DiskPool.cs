@@ -41,6 +41,13 @@ public class DiskPool : MonoBehaviour
         return tmp;
     }
 
+    public void SpeedUp(){
+        for(int i = 0; i < amountToPool; i++){
+            if(pooledObjects[i].activeInHierarchy)
+                pooledObjects[i].GetComponent<DiskMovement>().SpeedUp();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
