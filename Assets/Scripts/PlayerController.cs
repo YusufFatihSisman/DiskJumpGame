@@ -70,8 +70,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if(isOut())
+        if(isOut()){
+            scoreScript.UpdateHighScore();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+            
 
 
     }

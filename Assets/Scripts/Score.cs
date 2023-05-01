@@ -60,4 +60,11 @@ public class Score : MonoBehaviour
         if(currentScorePenalty - speedUpScore >= 0)
             speedUp = true;
     }
+
+    public void UpdateHighScore(){
+        if(MainMenuController.highScore < currentScore){
+            MainMenuController.highScore = currentScore;
+            PlayerPrefs.SetInt ("highScore", currentScore);
+        }
+    }
 }
