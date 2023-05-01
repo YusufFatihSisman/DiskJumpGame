@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackgroundScroller : MonoBehaviour
 {
 
+    private const float SPEEDUPCOEF = 1.5f;
     public float scrollSpeed = 0.5f;
     private float offset;
     private Material mat;
@@ -24,7 +25,6 @@ public class BackgroundScroller : MonoBehaviour
     }
 
     public void SpeedUp(){
-        Debug.Log("Background SpeedUP");
-        scrollSpeed *= 2;
+        scrollSpeed *= SPEEDUPCOEF;
     }
 }

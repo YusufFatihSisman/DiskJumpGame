@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+    private const float SPEEDUPCOEF = 1.5f;
+
     public Transform pivot;
     public Transform topLimit;
     public Transform botLimit;
@@ -14,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private bool start = true;
     private bool direction = true;
     private bool isJump = false;
+    private bool canJump = true;
 
     private const float ROTATION_TOP = 0.57f;
     private const float ROTATION_BOT = -0.57f;
@@ -43,7 +47,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown("space")){
+        if(canJump && Input.GetKeyDown("space")){
+            canJump = false;
             isJump = true;
             start = false;
             turnClock = false;
@@ -139,7 +144,7 @@ public class PlayerController : MonoBehaviour
         Vector2 currentDirection = transform.right;
         Vector2 hitNormal = (transform.position - diskPosition).normalized;
         transform.rotation = Quaternion.FromToRotation(transform.right, hitNormal) * transform.rotation;
-        
+        canJump = true;   
     }
 
     void OnCollisionEnter2D(Collision2D collision){
@@ -148,10 +153,9 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("DrugCollision");
             isJump = false;
             
-            GameObject other = collision.gameObject;
             DiskMovement dM = collision.gameObject.GetComponent<DiskMovement>();
-            scoreScript.UpdateScore(5 - (int)collision.gameObject.transform.localScale.x);
             dM.Cure();
+            scoreScript.UpdateScore(5 - (int)collision.gameObject.transform.localScale.x);
             rotateSpeed = dM.GetRotationSpeed();
             direction = dM.GetDirection();
             diskPosition = dM.GetPosition();
@@ -161,7 +165,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void SpeedUp(){
-        scrollSpeed *= 2;
+        scrollSpeed *= SPEEDUPCOEF;
+        jumpSpeed *= SPEEDUPCOEF;
+        rotatePower *= SPEEDUPCOEF;
     }
 
     public float GetXSize(){

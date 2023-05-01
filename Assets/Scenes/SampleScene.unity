@@ -679,6 +679,7 @@ MonoBehaviour:
   diskPrefab: {fileID: 718258903176012564, guid: 9204abf3078e0364fb82dd84de726e3c, type: 3}
   TopLimit: {fileID: 260093196}
   BottomLimit: {fileID: 322592853}
+  scoreText: {fileID: 814768216}
 --- !u!114 &1408755430
 MonoBehaviour:
   m_ObjectHideFlags: 0

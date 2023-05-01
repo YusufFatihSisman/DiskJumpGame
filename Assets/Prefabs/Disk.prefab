@@ -101,9 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2767846868486927387}
-  scrollSpeed: 1
-  rotationSpeed: 40
-  direction: 0
+  scoreText: {fileID: 0}
 --- !u!58 &7144095455314950567
 CircleCollider2D:
   m_ObjectHideFlags: 0

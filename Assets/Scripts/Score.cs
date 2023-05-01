@@ -9,9 +9,10 @@ public class Score : MonoBehaviour
 
     public TMP_Text scoreText;
     private int currentScore = 0;
+    private int currentScorePenalty = 0;
     private bool speedUp = false;
     private int speedUpScore = 10;
-    private int speedUpComp = 10;
+    private int speedUpLimit = 10;
 
     public GameObject player;
     public GameObject background;
@@ -36,7 +37,8 @@ public class Score : MonoBehaviour
     {
         if(speedUp){
             speedUp = false;
-            speedUpScore += speedUpComp;
+            speedUpScore += speedUpLimit;
+            speedUpLimit *= 2;
             playerController.SpeedUp();
             diskPoolScript.SpeedUp();
             bgScroller.SpeedUp();
@@ -46,9 +48,16 @@ public class Score : MonoBehaviour
 
     public void UpdateScore(int score){
         currentScore += score;
+        currentScorePenalty += score;
         scoreText.text = currentScore.ToString();
-        if(currentScore - speedUpScore >= 0)
+        if(currentScorePenalty - speedUpScore >= 0)
             speedUp = true;
              
+    }
+
+    public void UpdateScorePenalty(int score){
+        currentScorePenalty += score;
+        if(currentScorePenalty - speedUpScore >= 0)
+            speedUp = true;
     }
 }

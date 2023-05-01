@@ -5,23 +5,29 @@ using UnityEngine;
 public class DiskSpawner : MonoBehaviour
 {
 
+    private const float SPEEDUPCOEF = 1.5f;
+    private float waitTime = 5f;
     public GameObject player;
     public Transform endPoint;
     public GameObject diskPrefab;
     public Transform TopLimit;
     public Transform BottomLimit;
-    private float bottomSize = 1f;
+    private float bottomSize = 2f;
     private float topSize = 4f;
 
     private float playerXSize;
     private float scrollSpeed = 1f;
+
+    public GameObject scoreText;
+    private Score scoreScript;
 
 
     // Start is called before the first frame update
     void Start()
     {
         playerXSize = player.GetComponent<PlayerController>().GetXSize();
-        StartCoroutine(CreateDisk(5f));
+        scoreScript = scoreText.GetComponent<Score>();
+        StartCoroutine(CreateDisk());
     }
 
     // Update is called once per frame
@@ -30,7 +36,7 @@ public class DiskSpawner : MonoBehaviour
         
     }
 
-    private IEnumerator CreateDisk(float waitTime)
+    private IEnumerator CreateDisk()
     {
         while (true)
         {
@@ -38,6 +44,7 @@ public class DiskSpawner : MonoBehaviour
             GameObject newDisk = DiskPool.SharedInstance.GetPooledObject();
             if(newDisk != null){
                 DiskMovement dM = newDisk.GetComponent<DiskMovement>();
+                dM.setScoreSpcript(scoreScript);
                 float size = Random.Range(bottomSize, topSize);
                 float pos = Random.Range(BottomLimit.position.y, TopLimit.position.y);
                 if(pos + size/2 > TopLimit.position.y)
@@ -66,6 +73,7 @@ public class DiskSpawner : MonoBehaviour
 
 
     public void SpeedUp(){
-        scrollSpeed *= 2;
+        scrollSpeed *= SPEEDUPCOEF;
+        waitTime /= SPEEDUPCOEF;
     }
 }

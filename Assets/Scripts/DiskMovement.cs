@@ -5,23 +5,30 @@ using UnityEngine;
 public class DiskMovement : MonoBehaviour
 {
 
+    private const float SPEEDUPCOEF = 1.5f;
     public Animator animator;
     private float scrollSpeed = 1f;
     private float rotationSpeed = 50f;
     private bool direction = false;
     private Vector3 endpoint;
 
+    private Score scoreScript;
+
     // Start is called before the first frame update
     void Start()
     {
-
+         //scoreScript = scoreText.GetComponent<Score>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(IsOutScene())
+        if(IsOutScene()){
             gameObject.SetActive(false);
+            if(gameObject.tag == "Infected")
+                 scoreScript.UpdateScorePenalty(5 - (int)gameObject.transform.localScale.x);
+        }
+            
 
             
     }
@@ -72,11 +79,16 @@ public class DiskMovement : MonoBehaviour
     }
 
     public void SpeedUp(){
-        scrollSpeed *= 2;
+        scrollSpeed *= SPEEDUPCOEF;
+        rotationSpeed *= SPEEDUPCOEF;
     }
 
     public void Cure(){
         animator.SetTrigger("Cure");
+    }
+
+    public void setScoreSpcript(Score script){
+        scoreScript = script;
     }
 
 }
