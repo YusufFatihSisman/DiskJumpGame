@@ -49,8 +49,13 @@ public class DiskSpawner : MonoBehaviour
                 float pos = Random.Range(BottomLimit.position.y, TopLimit.position.y);
                 if(pos + size/2 > TopLimit.position.y)
                     pos = TopLimit.position.y - size/2 - playerXSize;     
-                if(pos - size/2 < BottomLimit.position.y)
+                else if(pos - size/2 < BottomLimit.position.y)
                     pos = BottomLimit.position.y + size/2 + playerXSize;
+                else
+                    if((TopLimit.position.y - pos) > (pos - BottomLimit.position.y))
+                        pos += playerXSize;
+                    else
+                        pos -= playerXSize;
                 int direction = Random.Range(0, 2);
                 if(direction == 0)
                     dM.SetRotation(false);
