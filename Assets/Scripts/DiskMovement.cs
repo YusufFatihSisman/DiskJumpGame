@@ -17,19 +17,18 @@ public class DiskMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         //scoreScript = scoreText.GetComponent<Score>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if(IsOutScene()){
-            gameObject.SetActive(false);
             if(gameObject.tag == "Infected")
-                 scoreScript.UpdateScorePenalty(5 - (int)gameObject.transform.localScale.x);
-        }
-            
-
+                scoreScript.UpdateScorePenalty(2 * (5 - (int)gameObject.transform.localScale.x));
+            gameObject.SetActive(false);
+                 
+        }            
             
     }
 

@@ -82,11 +82,13 @@ public class PlayerController : MonoBehaviour
             Jump();
         else{
             RotateAroundDisk();
-            if(turnClock)
-                transform.RotateAround(diskPosition, Vector3.back, rotatePower * Time.deltaTime);
-            else if(turnCounterClock)
-                transform.RotateAround(diskPosition, Vector3.forward, rotatePower * Time.deltaTime); 
-                
+            if(canJump){
+                if(turnClock)
+                    transform.RotateAround(diskPosition, Vector3.back, rotatePower * Time.deltaTime);
+                else if(turnCounterClock)
+                    transform.RotateAround(diskPosition, Vector3.forward, rotatePower * Time.deltaTime); 
+            }
+                   
         }
             
 
@@ -124,16 +126,14 @@ public class PlayerController : MonoBehaviour
     bool isOut(){
         if(transform.position.x + xSize < pivot.position.x)
             return true;
-        if(transform.position.x + ySize < pivot.position.x)
+
+        if(transform.position.y - xSize > topLimit.position.y)
             return true;
 
-        if(transform.position.y - ySize > topLimit.position.y)
+        if(transform.position.y + xSize < botLimit.position.y)
             return true;
 
-        if(transform.position.y + ySize < botLimit.position.y)
-            return true;
-
-        if(transform.position.x - ySize > topLimit.position.x)
+        if(transform.position.x - xSize > topLimit.position.x)
             return true;
 
         

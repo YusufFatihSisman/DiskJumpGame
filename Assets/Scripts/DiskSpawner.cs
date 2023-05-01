@@ -62,7 +62,6 @@ public class DiskSpawner : MonoBehaviour
                 dM.SetScrollSpeed(scrollSpeed);
                 newDisk.transform.localScale = new Vector2(size, size); // change its local scale in x y z format
                 newDisk.SetActive(true);
-                newDisk.GetComponent<Animator>().SetTrigger("Spawn");
             }else{
                 Destroy(newDisk);
                 yield return null;
